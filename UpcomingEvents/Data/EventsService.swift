@@ -7,20 +7,23 @@
 
 import Foundation
 
-class EventsService {
+protocol EventsServiceAPI {
+    func getEventsFromJSON() -> [Event]
+}
+
+final class EventsServiceAPIImp: EventsServiceAPI {
     
-    func getEventsFromJson(callback: ([Event]) -> Void) {
-        
+    func getEventsFromJSON() -> [Event] {
         let fileName = "mock"
         let decoder = JSONDecoder()
         guard let url = Bundle.main.url(forResource: fileName, withExtension: "json"),
               let data = try? Data(contentsOf: url),
               let events = try? decoder.decode([Event].self, from: data)
         else {
-            return callback([])
+            return []
         }
         
         print(events)
-        return callback(events)
+        return events
     }
 }

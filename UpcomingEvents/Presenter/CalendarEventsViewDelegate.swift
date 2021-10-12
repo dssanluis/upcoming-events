@@ -7,9 +7,8 @@
 
 import Foundation
 
-protocol TrafficLightViewDelegate: NSObjectProtocol {
-    func displayTrafficLight(description: String)
-    func display(events: [Event])
+protocol CalendarEventsViewDelegate: AnyObject {
+    func display(events: [EventViewData])
 }
 
 protocol CalendarEventsPresenterInputs {
@@ -18,25 +17,22 @@ protocol CalendarEventsPresenterInputs {
 
 class CalendarEventsPresenter: CalendarEventsPresenterInputs {
     
-    private let service: EventsService
-    weak private var trafficLightViewDelegate : TrafficLightViewDelegate?
+    private let getEventsUseCase: GetEventUseCase
     
-    init(service: EventsService){
-        self.service = service
+    weak private var calendarEventsViewDelegate : CalendarEventsViewDelegate?
+    
+    init(getEventsUseCase: GetEventUseCase){
+        self.getEventsUseCase = getEventsUseCase
     }
     
-    func setViewDelegate(trafficLightViewDelegate:TrafficLightViewDelegate?){
-        self.trafficLightViewDelegate = trafficLightViewDelegate
+    func setViewDelegate(calendarEventsViewDelegate: CalendarEventsViewDelegate?) {
+        self.calendarEventsViewDelegate = calendarEventsViewDelegate
     }
     
     func getEvents() {
-        service
-            .getEventsFromJson(callback: { [weak self] events in
-                
-                self?.trafficLightViewDelegate?.displayTrafficLight(description: events.count.description)
-                
-                self?.trafficLightViewDelegate?.display(events: events)
-                
-            })
+        let events = getEventsUseCase.invoke()
+        let viewDatas: [EventViewData] = events.map { EventViewData(event: $0) }
+        self.calendarEventsViewDelegate?.display(events: viewDatas)
     }
 }
+

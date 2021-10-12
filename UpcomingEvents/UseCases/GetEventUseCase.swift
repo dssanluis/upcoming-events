@@ -8,13 +8,13 @@
 import Foundation
 
 protocol GetEventUseCase {
-    func invoke()
+    func invoke() -> [Event]
 }
 
 final class GetEventUseCaseImp {
     
     struct Dependencies {
-        let getEventsAPI = EventsService()
+        let getEventsAPI = EventsServiceAPIImp()
     }
     
     let dependencies: Dependencies
@@ -26,9 +26,9 @@ final class GetEventUseCaseImp {
 
 extension GetEventUseCaseImp: GetEventUseCase {
     
-    func invoke() {
+    func invoke() -> [Event] {
         dependencies
             .getEventsAPI
-            .getEventsFromJson(callback: { _ in self } )
+            .getEventsFromJSON()
     }
 }

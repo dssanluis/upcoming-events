@@ -9,8 +9,7 @@
 /* Begin PBXBuildFile section */
 		3DF6D5B72714F53300AE0229 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF6D5B62714F53300AE0229 /* AppDelegate.swift */; };
 		3DF6D5B92714F53300AE0229 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF6D5B82714F53300AE0229 /* SceneDelegate.swift */; };
-		3DF6D5BB2714F53300AE0229 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF6D5BA2714F53300AE0229 /* ViewController.swift */; };
-		3DF6D5BE2714F53300AE0229 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DF6D5BC2714F53300AE0229 /* Main.storyboard */; };
+		3DF6D5BB2714F53300AE0229 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF6D5BA2714F53300AE0229 /* CalendarViewController.swift */; };
 		3DF6D5C02714F53600AE0229 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DF6D5BF2714F53600AE0229 /* Assets.xcassets */; };
 		3DF6D5C32714F53600AE0229 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DF6D5C12714F53600AE0229 /* LaunchScreen.storyboard */; };
 		3DF6D5CE2714F53700AE0229 /* UpcomingEventsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF6D5CD2714F53700AE0229 /* UpcomingEventsTests.swift */; };
@@ -20,6 +19,7 @@
 		3DF6D5F02714FA8300AE0229 /* CalendarEventsViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF6D5EF2714FA8300AE0229 /* CalendarEventsViewDelegate.swift */; };
 		3DF6D5F32715025400AE0229 /* mock.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DF6D5F22715025400AE0229 /* mock.json */; };
 		3DF6D5F627151FBB00AE0229 /* GetEventUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF6D5F527151FBB00AE0229 /* GetEventUseCase.swift */; };
+		3DF6D5F82715294200AE0229 /* EventViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF6D5F72715294200AE0229 /* EventViewData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,8 +43,7 @@
 		3DF6D5B32714F53300AE0229 /* UpcomingEvents.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UpcomingEvents.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DF6D5B62714F53300AE0229 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DF6D5B82714F53300AE0229 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3DF6D5BA2714F53300AE0229 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3DF6D5BD2714F53300AE0229 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3DF6D5BA2714F53300AE0229 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalendarViewController.swift; path = ../CalendarViewController.swift; sourceTree = "<group>"; };
 		3DF6D5BF2714F53600AE0229 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3DF6D5C22714F53600AE0229 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3DF6D5C42714F53600AE0229 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -59,6 +58,7 @@
 		3DF6D5EF2714FA8300AE0229 /* CalendarEventsViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEventsViewDelegate.swift; sourceTree = "<group>"; };
 		3DF6D5F22715025400AE0229 /* mock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mock.json; sourceTree = "<group>"; };
 		3DF6D5F527151FBB00AE0229 /* GetEventUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEventUseCase.swift; sourceTree = "<group>"; };
+		3DF6D5F72715294200AE0229 /* EventViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,15 +109,14 @@
 		3DF6D5B52714F53300AE0229 /* UpcomingEvents */ = {
 			isa = PBXGroup;
 			children = (
-				3DF6D5F427151FA200AE0229 /* UseCases */,
 				3DF6D5F12715022D00AE0229 /* Resources */,
 				3DF6D5E82714F55E00AE0229 /* Views */,
 				3DF6D5E72714F55400AE0229 /* Presenter */,
+				3DF6D5F427151FA200AE0229 /* UseCases */,
 				3DF6D5EC2714F5D100AE0229 /* Data */,
 				3DF6D5E62714F54700AE0229 /* Models */,
 				3DF6D5B62714F53300AE0229 /* AppDelegate.swift */,
 				3DF6D5B82714F53300AE0229 /* SceneDelegate.swift */,
-				3DF6D5BC2714F53300AE0229 /* Main.storyboard */,
 				3DF6D5BF2714F53600AE0229 /* Assets.xcassets */,
 				3DF6D5C12714F53600AE0229 /* LaunchScreen.storyboard */,
 				3DF6D5C42714F53600AE0229 /* Info.plist */,
@@ -162,7 +161,8 @@
 		3DF6D5E82714F55E00AE0229 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				3DF6D5BA2714F53300AE0229 /* ViewController.swift */,
+				3DF6D5BA2714F53300AE0229 /* CalendarViewController.swift */,
+				3DF6D5F72715294200AE0229 /* EventViewData.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -296,7 +296,6 @@
 			files = (
 				3DF6D5C32714F53600AE0229 /* LaunchScreen.storyboard in Resources */,
 				3DF6D5C02714F53600AE0229 /* Assets.xcassets in Resources */,
-				3DF6D5BE2714F53300AE0229 /* Main.storyboard in Resources */,
 				3DF6D5F32715025400AE0229 /* mock.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,7 +325,8 @@
 				3DF6D5EB2714F59E00AE0229 /* Event.swift in Sources */,
 				3DF6D5F627151FBB00AE0229 /* GetEventUseCase.swift in Sources */,
 				3DF6D5EE2714F60A00AE0229 /* EventsService.swift in Sources */,
-				3DF6D5BB2714F53300AE0229 /* ViewController.swift in Sources */,
+				3DF6D5BB2714F53300AE0229 /* CalendarViewController.swift in Sources */,
+				3DF6D5F82715294200AE0229 /* EventViewData.swift in Sources */,
 				3DF6D5B72714F53300AE0229 /* AppDelegate.swift in Sources */,
 				3DF6D5B92714F53300AE0229 /* SceneDelegate.swift in Sources */,
 			);
@@ -364,14 +364,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		3DF6D5BC2714F53300AE0229 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3DF6D5BD2714F53300AE0229 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		3DF6D5C12714F53600AE0229 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

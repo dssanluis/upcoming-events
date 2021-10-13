@@ -27,8 +27,17 @@ final class GetEventUseCaseImp {
 extension GetEventUseCaseImp: GetEventUseCase {
     
     func invoke() -> [Event] {
-        dependencies
+        
+        let events = dependencies
             .getEventsAPI
             .getEventsFromJSON()
+            .sorted(by: { $0.start < $1.start })
+        
+        events.forEach {
+            print($0.title)
+//            print($0.interval)
+        }
+        
+        return events
     }
 }

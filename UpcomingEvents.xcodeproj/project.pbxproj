@@ -20,6 +20,7 @@
 		3DF6D5F32715025400AE0229 /* mock.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DF6D5F22715025400AE0229 /* mock.json */; };
 		3DF6D5F627151FBB00AE0229 /* GetEventUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF6D5F527151FBB00AE0229 /* GetEventUseCase.swift */; };
 		3DF6D5F82715294200AE0229 /* EventViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF6D5F72715294200AE0229 /* EventViewData.swift */; };
+		3DF6D603271651CF00AE0229 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF6D602271651CF00AE0229 /* Helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		3DF6D5F22715025400AE0229 /* mock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mock.json; sourceTree = "<group>"; };
 		3DF6D5F527151FBB00AE0229 /* GetEventUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEventUseCase.swift; sourceTree = "<group>"; };
 		3DF6D5F72715294200AE0229 /* EventViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewData.swift; sourceTree = "<group>"; };
+		3DF6D602271651CF00AE0229 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 		3DF6D5B52714F53300AE0229 /* UpcomingEvents */ = {
 			isa = PBXGroup;
 			children = (
+				3DF6D60127164F8C00AE0229 /* Helper */,
 				3DF6D5F12715022D00AE0229 /* Resources */,
 				3DF6D5E82714F55E00AE0229 /* Views */,
 				3DF6D5E72714F55400AE0229 /* Presenter */,
@@ -161,6 +164,7 @@
 		3DF6D5E82714F55E00AE0229 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3DF6D628271735FE00AE0229 /* Symbols */,
 				3DF6D5BA2714F53300AE0229 /* CalendarViewController.swift */,
 				3DF6D5F72715294200AE0229 /* EventViewData.swift */,
 			);
@@ -189,6 +193,21 @@
 				3DF6D5F527151FBB00AE0229 /* GetEventUseCase.swift */,
 			);
 			path = UseCases;
+			sourceTree = "<group>";
+		};
+		3DF6D60127164F8C00AE0229 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				3DF6D602271651CF00AE0229 /* Helper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		3DF6D628271735FE00AE0229 /* Symbols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Symbols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -326,6 +345,7 @@
 				3DF6D5F627151FBB00AE0229 /* GetEventUseCase.swift in Sources */,
 				3DF6D5EE2714F60A00AE0229 /* EventsService.swift in Sources */,
 				3DF6D5BB2714F53300AE0229 /* CalendarViewController.swift in Sources */,
+				3DF6D603271651CF00AE0229 /* Helper.swift in Sources */,
 				3DF6D5F82715294200AE0229 /* EventViewData.swift in Sources */,
 				3DF6D5B72714F53300AE0229 /* AppDelegate.swift in Sources */,
 				3DF6D5B92714F53300AE0229 /* SceneDelegate.swift in Sources */,

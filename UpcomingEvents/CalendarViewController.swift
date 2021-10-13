@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CalendarViewController: UIViewController, CalendarEventsViewDelegate {
+class CalendarViewController: UIViewController {
     
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
@@ -31,13 +31,14 @@ class CalendarViewController: UIViewController, CalendarEventsViewDelegate {
         let tableView = UITableView()
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
         return tableView
     }()
     
-    let cellReuseIdentifier = "cell"
+    let cellReuseIdentifier = "cellId"
     let presenter: CalendarEventsPresenter
     
-    private var events: [EventViewData] = [] {
+    private var sections: [[EventViewData]] = [] {
         didSet {
             tableView.reloadData()
         }
@@ -78,24 +79,38 @@ class CalendarViewController: UIViewController, CalendarEventsViewDelegate {
         presenter.getEvents()
     }
     
-    func display(events: [EventViewData]) {
-        self.events = events
-    }
+//    func display(events: [EventViewData]) {
+//        self.events = events
+//    }
 }
 
 extension CalendarViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        sections.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        events.count
+        sections[section].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as UITableViewCell? ?? UITableViewCell()
+        let cell: UITableViewCell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath)
 
-        cell.textLabel?.text = events[indexPath.row].title
+        cell.textLabel?.text = sections[indexPath.section][indexPath.row].title
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        " "
     }
 }
 
 extension CalendarViewController: UITableViewDelegate {
+}
+
+extension CalendarViewController: CalendarEventsViewDelegate {
+    func display(events: [[EventViewData]]) {
+        sections = events
+    }
 }

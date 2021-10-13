@@ -8,16 +8,19 @@
 import Foundation
 
 protocol CalendarEventsViewDelegate: AnyObject {
-    func display(events: [EventViewData])
+    func display(events: [[EventViewData]])
 }
 
-protocol CalendarEventsPresenterInputs {
+protocol CalendarEventsPresenter {
     func getEvents()
+    func setViewDelegate(calendarEventsViewDelegate: CalendarEventsViewDelegate?)
 }
 
-class CalendarEventsPresenter: CalendarEventsPresenterInputs {
+class CalendarEventsPresenterImp: CalendarEventsPresenter {
     
     private let getEventsUseCase: GetEventUseCase
+    
+    private var datesTitle: [Date] = []
     
     weak private var calendarEventsViewDelegate : CalendarEventsViewDelegate?
     
@@ -31,8 +34,32 @@ class CalendarEventsPresenter: CalendarEventsPresenterInputs {
     
     func getEvents() {
         let events = getEventsUseCase.invoke()
-        let viewDatas: [EventViewData] = events.map { EventViewData(event: $0) }
-        self.calendarEventsViewDelegate?.display(events: viewDatas)
+        var dates = Set<Date>()
+        var sections: [[EventViewData]] = []
+        
+        events.forEach {
+            dates.insert($0.startDate)
+            print($0.hour)
+        }
+        
+        datesTitle = dates.map { $0 }.sorted(by: { $0 < $1 })
+        
+//        print(datesTitle)
+        
+        for date in datesTitle {
+            let viewDatas: [EventViewData] = events
+                .filter { $0.startDate == date }
+                .sorted(by: { $0.hour < $1.hour })
+                .map { EventViewData(event: $0) }
+
+            sections.append(viewDatas)
+        }
+        
+//        print(sections)
+        calendarEventsViewDelegate?.display(events: sections)
+        
+//        let viewDatas: [EventViewData] = events.map { EventViewData(event: $0) }
+//        self.calendarEventsViewDelegate?.display(events: viewDatas)
     }
 }
 

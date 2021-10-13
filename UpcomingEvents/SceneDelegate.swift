@@ -58,7 +58,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     private func makePresenter() -> CalendarEventsPresenter {
-        CalendarEventsPresenter(getEventsUseCase: GetEventUseCaseImp())
+        CalendarEventsPresenterImp(getEventsUseCase: GetEventUseCaseImp())
     }
 }
 

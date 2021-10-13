@@ -20,4 +20,8 @@ extension EventViewData {
     var title: String {
         event.title
     }
+    
+    var startDate: String {
+        event.startDate.toString()
+    }
 }

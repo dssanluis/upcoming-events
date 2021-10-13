@@ -42,4 +42,8 @@ extension EventViewData {
         let hour = calendar.date(from: components)!.toString(with: "HH:mm a")
         return hour
     }
+    
+    var id: String {
+        event.startDate.toString()
+    }
 }

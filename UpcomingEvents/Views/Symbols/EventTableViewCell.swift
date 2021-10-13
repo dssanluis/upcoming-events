@@ -16,12 +16,14 @@ final class EventTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        view.backgroundColor = AppColors.main.withAlphaComponent(0.1)
+        view.layer.cornerRadius = 10
     }
 
     func setup(viewData: EventViewData) {
         title?.text = viewData.title
         lblStart?.text = viewData.startDate
         lblEnd?.text = viewData.endDate
-        
     }
 }

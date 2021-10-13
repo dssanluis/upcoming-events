@@ -9,6 +9,7 @@ import Foundation
 
 protocol GetEventUseCase {
     func invoke() -> [Event]
+    func invoke(with id: String) -> [Event]
 }
 
 final class GetEventUseCaseImp {
@@ -38,6 +39,17 @@ extension GetEventUseCaseImp: GetEventUseCase {
 ////            print($0.interval)
 //        }
         
+        return events
+    }
+    
+    func invoke(with id: String) -> [Event] {
+        let events = dependencies
+            .getEventsAPI
+            .getEventsFromJSON()
+            .filter { $0.start.toString().contains(id) }
+            .sorted(by: { $0.start < $1.start })
+        
+        print(events)
         return events
     }
 }

@@ -30,14 +30,7 @@ extension Event {
         let components = calendar.dateComponents(unitFlags, from: self.start)
         return calendar.date(from: components)!
     }
-//
-//    var endDate: Date {
-//        guard let date = Event.jsonDateFormatter.date(from: self.end) else {
-//            fatalError("Unable to parse date.")
-//        }
-//        return date
-//    }
-//
+    
     var hour: Int {
         Calendar.current.component(.hour, from: start)
     }
@@ -49,12 +42,5 @@ extension Event {
     
     func intersects(with event: Event) -> Bool {
         interval.intersects(event.interval)
-    }
-    
-    var completHour: String {
-        let calendar = Calendar.current
-        let unitFlags = Set<Calendar.Component>([.hour, .minute])
-        let components = calendar.dateComponents(unitFlags, from: self.start)
-        return calendar.date(from: components)!.toString(with: "HH:mm")
     }
 }

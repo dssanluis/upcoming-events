@@ -14,8 +14,6 @@ extension String {
         dateFormatter.dateFormat = format
         dateFormatter.dateStyle = .short
         dateFormatter.timeStyle = .none
-//        dateFormatter.timeZone = TimeZone.current
-//        dateFormatter.locale = Locale.current
         let date = dateFormatter.date(from: self)
         return date
     }
@@ -40,4 +38,26 @@ extension Date {
         let string = dateFormatter.string(from: self)
         return string
     }
+}
+
+extension JSONDecoder.DateDecodingStrategy {
+    static let monthDayYearTime = custom {
+        let container = try $0.singleValueContainer()
+        let string = try container.decode(String.self)
+        guard let date = Formatter.custom.date(from: string) else {
+            throw DecodingError.dataCorruptedError(in: container,
+                  debugDescription: "Invalid date: " + string)
+        }
+        return date
+    }
+}
+
+extension Formatter {
+    static let custom: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.calendar = Calendar(identifier: .iso8601)
+        formatter.locale = Locale.current
+        formatter.dateFormat = "MMMM d, yyyy h:mm a"
+        return formatter
+    }()
 }

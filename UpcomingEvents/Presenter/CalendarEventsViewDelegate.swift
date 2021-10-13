@@ -14,6 +14,7 @@ protocol CalendarEventsViewDelegate: AnyObject {
 protocol CalendarEventsPresenter {
     func getEvents()
     func setViewDelegate(calendarEventsViewDelegate: CalendarEventsViewDelegate?)
+    func getEventDetail(idEvent: String)
 }
 
 class CalendarEventsPresenterImp: CalendarEventsPresenter {
@@ -60,6 +61,10 @@ class CalendarEventsPresenterImp: CalendarEventsPresenter {
         
 //        let viewDatas: [EventViewData] = events.map { EventViewData(event: $0) }
 //        self.calendarEventsViewDelegate?.display(events: viewDatas)
+    }
+    
+    func getEventDetail(idEvent: String) {
+        let events = getEventsUseCase.invoke(with: idEvent)
     }
 }
 

@@ -31,7 +31,15 @@ class CalendarViewController: UIViewController {
         let tableView = UITableView()
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
+        let textFieldCell = UINib(nibName: "EventTableViewCell",
+                                      bundle: nil)
+        tableView.register(textFieldCell, forCellReuseIdentifier: "EventTableViewCell")
+//        tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        tableView.showsVerticalScrollIndicator = false
+//        tableView.translatesAutoresizingMaskIntoConstraints = true
+//        tableView.separatorStyle = .none
+//        tableView.alwaysBounceVertical = true
+//        tableView.rowHeight = UITableView.automaticDimension
         return tableView
     }()
     
@@ -94,15 +102,16 @@ extension CalendarViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "EventTableViewCell", for: indexPath) as? EventTableViewCell else { return UITableViewCell() }
 
-        cell.textLabel?.text = sections[indexPath.section][indexPath.row].title
+        let viewData = sections[indexPath.section][indexPath.row]
+        cell.setup(viewData: viewData)
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        " "
+        return sections[section].first?.headerTitle ?? ""
     }
 }
 

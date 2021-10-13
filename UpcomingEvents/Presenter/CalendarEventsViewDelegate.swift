@@ -39,7 +39,7 @@ class CalendarEventsPresenterImp: CalendarEventsPresenter {
         
         events.forEach {
             dates.insert($0.startDate)
-            print($0.hour)
+//            print($0.hour)
         }
         
         datesTitle = dates.map { $0 }.sorted(by: { $0 < $1 })

@@ -50,4 +50,11 @@ extension Event {
     func intersects(with event: Event) -> Bool {
         interval.intersects(event.interval)
     }
+    
+    var completHour: String {
+        let calendar = Calendar.current
+        let unitFlags = Set<Calendar.Component>([.hour, .minute])
+        let components = calendar.dateComponents(unitFlags, from: self.start)
+        return calendar.date(from: components)!.toString(with: "HH:mm")
+    }
 }

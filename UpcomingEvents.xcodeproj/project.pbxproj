@@ -21,6 +21,8 @@
 		3DF6D5F627151FBB00AE0229 /* GetEventUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF6D5F527151FBB00AE0229 /* GetEventUseCase.swift */; };
 		3DF6D5F82715294200AE0229 /* EventViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF6D5F72715294200AE0229 /* EventViewData.swift */; };
 		3DF6D603271651CF00AE0229 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF6D602271651CF00AE0229 /* Helper.swift */; };
+		3DF6D6312717439400AE0229 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF6D62F2717439400AE0229 /* EventTableViewCell.swift */; };
+		3DF6D6322717439400AE0229 /* EventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DF6D6302717439400AE0229 /* EventTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		3DF6D5F527151FBB00AE0229 /* GetEventUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEventUseCase.swift; sourceTree = "<group>"; };
 		3DF6D5F72715294200AE0229 /* EventViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewData.swift; sourceTree = "<group>"; };
 		3DF6D602271651CF00AE0229 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		3DF6D62F2717439400AE0229 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+		3DF6D6302717439400AE0229 /* EventTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +210,8 @@
 		3DF6D628271735FE00AE0229 /* Symbols */ = {
 			isa = PBXGroup;
 			children = (
+				3DF6D62F2717439400AE0229 /* EventTableViewCell.swift */,
+				3DF6D6302717439400AE0229 /* EventTableViewCell.xib */,
 			);
 			path = Symbols;
 			sourceTree = "<group>";
@@ -313,6 +319,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DF6D6322717439400AE0229 /* EventTableViewCell.xib in Resources */,
 				3DF6D5C32714F53600AE0229 /* LaunchScreen.storyboard in Resources */,
 				3DF6D5C02714F53600AE0229 /* Assets.xcassets in Resources */,
 				3DF6D5F32715025400AE0229 /* mock.json in Resources */,
@@ -348,6 +355,7 @@
 				3DF6D603271651CF00AE0229 /* Helper.swift in Sources */,
 				3DF6D5F82715294200AE0229 /* EventViewData.swift in Sources */,
 				3DF6D5B72714F53300AE0229 /* AppDelegate.swift in Sources */,
+				3DF6D6312717439400AE0229 /* EventTableViewCell.swift in Sources */,
 				3DF6D5B92714F53300AE0229 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

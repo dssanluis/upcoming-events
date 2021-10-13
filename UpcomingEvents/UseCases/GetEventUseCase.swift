@@ -33,10 +33,10 @@ extension GetEventUseCaseImp: GetEventUseCase {
             .getEventsFromJSON()
             .sorted(by: { $0.start < $1.start })
         
-        events.forEach {
-            print($0.title)
-//            print($0.interval)
-        }
+//        events.forEach {
+//            print($0.title)
+////            print($0.interval)
+//        }
         
         return events
     }

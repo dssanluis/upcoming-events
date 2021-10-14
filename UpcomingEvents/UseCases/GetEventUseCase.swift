@@ -34,11 +34,6 @@ extension GetEventUseCaseImp: GetEventUseCase {
             .getEventsFromJSON()
             .sorted(by: { $0.start < $1.start })
         
-//        events.forEach {
-//            print($0.title)
-////            print($0.interval)
-//        }
-        
         return events
     }
     
@@ -46,10 +41,9 @@ extension GetEventUseCaseImp: GetEventUseCase {
         let events = dependencies
             .getEventsAPI
             .getEventsFromJSON()
-            .filter { $0.start.toString().contains(id) }
+            .filter { $0.start.toString() == id }
             .sorted(by: { $0.start < $1.start })
-        
-        print(events)
+       
         return events
     }
 }

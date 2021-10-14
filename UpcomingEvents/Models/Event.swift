@@ -7,23 +7,14 @@
 
 import Foundation
 
-struct Event: Decodable {
+struct Event: Decodable, Equatable, Hashable {
     let title: String
     let start: Date
     let end: Date
+    var hasConflict: Bool?
 }
 
 extension Event {
-//    public static var jsonDateFormatter: DateFormatter = {
-//        let formatter = DateFormatter()
-//        formatter.dateFormat = "MMMM d, yyyy h:mm a"
-//        formatter.timeZone = TimeZone.current
-//        formatter.calendar = Calendar(identifier: .iso8601)
-//        formatter.locale = Locale.current//(identifier: "en_US_POSIX")
-//        return formatter
-//    }()
-//
-//    // Parse dates into Struct variables.
     var startDate: Date {
         let calendar = Calendar.current
         let unitFlags = Set<Calendar.Component>([.year, .month, .day])
@@ -35,12 +26,12 @@ extension Event {
         Calendar.current.component(.hour, from: start)
     }
     
-    var interval: DateInterval {
-        .init(start: self.start,
-              end: self.end)
+    var inteval: DateInterval {
+        DateInterval(start: start, end: end)
     }
     
-    func intersects(with event: Event) -> Bool {
-        interval.intersects(event.interval)
+    func interset(event: Event) -> Bool {
+        inteval.intersects(event.inteval)
     }
+    
 }

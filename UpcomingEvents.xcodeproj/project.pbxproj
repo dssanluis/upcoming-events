@@ -25,8 +25,7 @@
 		3DF6D6322717439400AE0229 /* EventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DF6D6302717439400AE0229 /* EventTableViewCell.xib */; };
 		3DF6D635271761D900AE0229 /* DetailEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF6D634271761D900AE0229 /* DetailEventViewController.swift */; };
 		3DF6D637271777EC00AE0229 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF6D636271777EC00AE0229 /* AppColor.swift */; };
-		3DF6D63C27177F6B00AE0229 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF6D63A27177F6B00AE0229 /* HeaderTableViewCell.swift */; };
-		3DF6D63D27177F6B00AE0229 /* HeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DF6D63B27177F6B00AE0229 /* HeaderTableViewCell.xib */; };
+		3DF6D63F2717AE5A00AE0229 /* GetConflictEventUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF6D63E2717AE5A00AE0229 /* GetConflictEventUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,8 +70,7 @@
 		3DF6D6302717439400AE0229 /* EventTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventTableViewCell.xib; sourceTree = "<group>"; };
 		3DF6D634271761D900AE0229 /* DetailEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEventViewController.swift; sourceTree = "<group>"; };
 		3DF6D636271777EC00AE0229 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
-		3DF6D63A27177F6B00AE0229 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
-		3DF6D63B27177F6B00AE0229 /* HeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderTableViewCell.xib; sourceTree = "<group>"; };
+		3DF6D63E2717AE5A00AE0229 /* GetConflictEventUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetConflictEventUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				3DF6D5F527151FBB00AE0229 /* GetEventUseCase.swift */,
+				3DF6D63E2717AE5A00AE0229 /* GetConflictEventUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -222,8 +221,6 @@
 			children = (
 				3DF6D62F2717439400AE0229 /* EventTableViewCell.swift */,
 				3DF6D6302717439400AE0229 /* EventTableViewCell.xib */,
-				3DF6D63A27177F6B00AE0229 /* HeaderTableViewCell.swift */,
-				3DF6D63B27177F6B00AE0229 /* HeaderTableViewCell.xib */,
 			);
 			path = Symbols;
 			sourceTree = "<group>";
@@ -342,7 +339,6 @@
 				3DF6D6322717439400AE0229 /* EventTableViewCell.xib in Resources */,
 				3DF6D5C32714F53600AE0229 /* LaunchScreen.storyboard in Resources */,
 				3DF6D5C02714F53600AE0229 /* Assets.xcassets in Resources */,
-				3DF6D63D27177F6B00AE0229 /* HeaderTableViewCell.xib in Resources */,
 				3DF6D5F32715025400AE0229 /* mock.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -371,13 +367,13 @@
 				3DF6D5F02714FA8300AE0229 /* CalendarEventsViewDelegate.swift in Sources */,
 				3DF6D635271761D900AE0229 /* DetailEventViewController.swift in Sources */,
 				3DF6D5EB2714F59E00AE0229 /* Event.swift in Sources */,
+				3DF6D63F2717AE5A00AE0229 /* GetConflictEventUseCase.swift in Sources */,
 				3DF6D5F627151FBB00AE0229 /* GetEventUseCase.swift in Sources */,
 				3DF6D5EE2714F60A00AE0229 /* EventsService.swift in Sources */,
 				3DF6D637271777EC00AE0229 /* AppColor.swift in Sources */,
 				3DF6D5BB2714F53300AE0229 /* CalendarViewController.swift in Sources */,
 				3DF6D603271651CF00AE0229 /* Helper.swift in Sources */,
 				3DF6D5F82715294200AE0229 /* EventViewData.swift in Sources */,
-				3DF6D63C27177F6B00AE0229 /* HeaderTableViewCell.swift in Sources */,
 				3DF6D5B72714F53300AE0229 /* AppDelegate.swift in Sources */,
 				3DF6D6312717439400AE0229 /* EventTableViewCell.swift in Sources */,
 				3DF6D5B92714F53300AE0229 /* SceneDelegate.swift in Sources */,

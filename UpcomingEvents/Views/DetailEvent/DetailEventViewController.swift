@@ -47,14 +47,12 @@ final class DetailEventViewController: UIViewController {
     
     override func loadView() {
         super.loadView()
-        title = "Eventos"
+        title = "Detail Events"
         view.backgroundColor = .white
         view.addSubview(stackView)
         
         stackView.addArrangedSubview(tableView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        
-        presenter.setViewDelegate(calendarEventsViewDelegate: self)
         
         let guide = view.safeAreaLayoutGuide
         NSLayoutConstraint.activate([stackView.topAnchor.constraint(equalTo: guide.topAnchor),
@@ -83,17 +81,8 @@ extension DetailEventViewController: UITableViewDataSource {
         
         return cell
     }
-    
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        return sections[section].first?.headerTitle ?? ""
-//    }
 }
 
 extension DetailEventViewController: UITableViewDelegate {
 }
 
-extension DetailEventViewController: CalendarEventsViewDelegate {
-    func display(events: [[EventViewData]]) {
-//        sections = events
-    }
-}

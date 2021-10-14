@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CalendarViewController: UIViewController {
+final class CalendarViewController: UIViewController {
     
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
@@ -34,9 +34,6 @@ class CalendarViewController: UIViewController {
         let textFieldCell = UINib(nibName: "EventTableViewCell",
                                   bundle: nil)
         tableView.register(textFieldCell, forCellReuseIdentifier: "EventTableViewCell")
-        let headerFieldCell = UINib(nibName: "HeaderTableViewCell",
-                                    bundle: nil)
-        tableView.register(HeaderTableViewCell.self, forHeaderFooterViewReuseIdentifier: "HeaderTableViewCell")
         tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         tableView.showsVerticalScrollIndicator = false
         tableView.translatesAutoresizingMaskIntoConstraints = true
@@ -88,10 +85,6 @@ class CalendarViewController: UIViewController {
         super.viewDidLoad()
         presenter.getEvents()
     }
-    
-//    func display(events: [EventViewData]) {
-//        self.events = events
-//    }
 }
 
 extension CalendarViewController: UITableViewDataSource {
@@ -121,15 +114,9 @@ extension CalendarViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         if let header = view as? UITableViewHeaderFooterView {
-            header.textLabel?.textColor = .white //UIColor.wmColor(color: .greyishBrown)
+            header.textLabel?.textColor = .white
             header.contentView.backgroundColor = AppColors.main
         }
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let viewData = sections[indexPath.section][indexPath.row]
-        presenter.getEventDetail(idEvent: viewData.id)
-        print("***")
     }
 }
 

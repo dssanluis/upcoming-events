@@ -19,6 +19,15 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iMM-YC-9Qu">
                         <rect key="frame" x="16" y="5" width="288" height="65"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjX-Gf-kno">
+                                <rect key="frame" x="233" y="5" width="50" height="20.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="g8f-JW-shO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Hnk-eO-nUr">
                                 <rect key="frame" x="8" y="5" width="272" height="55"/>
                                 <subviews>
@@ -48,7 +57,9 @@
                             <constraint firstItem="Hnk-eO-nUr" firstAttribute="top" secondItem="iMM-YC-9Qu" secondAttribute="top" constant="5" id="86k-DF-Z70"/>
                             <constraint firstItem="Hnk-eO-nUr" firstAttribute="leading" secondItem="iMM-YC-9Qu" secondAttribute="leading" constant="8" id="Dgb-ys-h9e"/>
                             <constraint firstAttribute="trailing" secondItem="Hnk-eO-nUr" secondAttribute="trailing" constant="8" id="dSd-ng-TDu"/>
+                            <constraint firstItem="yjX-Gf-kno" firstAttribute="top" secondItem="iMM-YC-9Qu" secondAttribute="top" constant="5" id="ijo-aH-jWZ"/>
                             <constraint firstAttribute="bottom" secondItem="Hnk-eO-nUr" secondAttribute="bottom" constant="5" id="nTX-Mz-Eux"/>
+                            <constraint firstAttribute="trailing" secondItem="yjX-Gf-kno" secondAttribute="trailing" constant="5" id="u20-1b-Riw"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Wp-rM-0tz">
@@ -79,6 +90,7 @@
             <connections>
                 <outlet property="lblEnd" destination="g4H-zm-wWo" id="lxF-Ng-o0q"/>
                 <outlet property="lblStart" destination="uS8-GT-BvR" id="mu0-OD-1CH"/>
+                <outlet property="lblStatus" destination="yjX-Gf-kno" id="PKI-Wt-xh4"/>
                 <outlet property="title" destination="bdc-JN-Qfp" id="UH8-KI-AiU"/>
                 <outlet property="view" destination="iMM-YC-9Qu" id="9JO-xy-gJg"/>
             </connections>

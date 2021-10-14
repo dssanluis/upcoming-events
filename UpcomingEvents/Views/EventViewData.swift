@@ -28,7 +28,7 @@ extension EventViewData {
     
     var endDate: String {
         let hour = getHour(date: event.end)
-        return "Fin:" + " " + event.end.toString() + " " + hour
+        return "Fin:" + " " + event.end.toString(with: "MMMM dd") + ", " + hour
     }
     
     var headerTitle: String {
@@ -43,7 +43,12 @@ extension EventViewData {
         return hour
     }
     
-    var id: String {
-        event.startDate.toString()
+    var status: String {
+        if let hasConflict = event.hasConflict,
+           hasConflict {
+            return "Conflict"
+        } else {
+            return " "
+        }
     }
 }

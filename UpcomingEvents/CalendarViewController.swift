@@ -27,7 +27,7 @@ final class CalendarViewController: UIViewController {
         return label
     }()
     
-    private lazy var tableView: UITableView = {
+    private(set) lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.dataSource = self
         tableView.delegate = self
@@ -45,7 +45,7 @@ final class CalendarViewController: UIViewController {
     
     let presenter: CalendarEventsPresenter
     
-    private var sections: [[EventViewData]] = [] {
+    private(set) var sections: [[EventViewData]] = [] {
         didSet {
             tableView.reloadData()
         }

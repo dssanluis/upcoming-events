@@ -26,6 +26,15 @@
 		3DF6D635271761D900AE0229 /* DetailEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF6D634271761D900AE0229 /* DetailEventViewController.swift */; };
 		3DF6D637271777EC00AE0229 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF6D636271777EC00AE0229 /* AppColor.swift */; };
 		3DF6D63F2717AE5A00AE0229 /* GetConflictEventUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF6D63E2717AE5A00AE0229 /* GetConflictEventUseCase.swift */; };
+		3DF6D6422717C3F500AE0229 /* EventsServiceAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF6D6412717C3F400AE0229 /* EventsServiceAPITest.swift */; };
+		3DF6D6452717C68F00AE0229 /* GetEventUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF6D6442717C68F00AE0229 /* GetEventUseCaseTests.swift */; };
+		3DF6D6472717C74900AE0229 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF6D6462717C74900AE0229 /* XCTestCase+MemoryLeakTracking.swift */; };
+		3DF6D6492717CA8E00AE0229 /* GetConflictEventUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF6D6482717CA8E00AE0229 /* GetConflictEventUseCaseTests.swift */; };
+		3DF6D64C2717CC6000AE0229 /* CalendarEventsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF6D64B2717CC6000AE0229 /* CalendarEventsPresenterTests.swift */; };
+		3DF6D64E2717CD0C00AE0229 /* CalendarEventsDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF6D64D2717CD0C00AE0229 /* CalendarEventsDependencies.swift */; };
+		3DF6D6512717CFCE00AE0229 /* CalendarViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF6D6502717CFCE00AE0229 /* CalendarViewControllerTests.swift */; };
+		3DF6D6552717D01400AE0229 /* CalendarEventsPresenterStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF6D6542717D01400AE0229 /* CalendarEventsPresenterStub.swift */; };
+		3DF6D6572717D2ED00AE0229 /* CalendarPresenterStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF6D6562717D2ED00AE0229 /* CalendarPresenterStub.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +80,15 @@
 		3DF6D634271761D900AE0229 /* DetailEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEventViewController.swift; sourceTree = "<group>"; };
 		3DF6D636271777EC00AE0229 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		3DF6D63E2717AE5A00AE0229 /* GetConflictEventUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetConflictEventUseCase.swift; sourceTree = "<group>"; };
+		3DF6D6412717C3F400AE0229 /* EventsServiceAPITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsServiceAPITest.swift; sourceTree = "<group>"; };
+		3DF6D6442717C68F00AE0229 /* GetEventUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEventUseCaseTests.swift; sourceTree = "<group>"; };
+		3DF6D6462717C74900AE0229 /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
+		3DF6D6482717CA8E00AE0229 /* GetConflictEventUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetConflictEventUseCaseTests.swift; sourceTree = "<group>"; };
+		3DF6D64B2717CC6000AE0229 /* CalendarEventsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEventsPresenterTests.swift; sourceTree = "<group>"; };
+		3DF6D64D2717CD0C00AE0229 /* CalendarEventsDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEventsDependencies.swift; sourceTree = "<group>"; };
+		3DF6D6502717CFCE00AE0229 /* CalendarViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewControllerTests.swift; sourceTree = "<group>"; };
+		3DF6D6542717D01400AE0229 /* CalendarEventsPresenterStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEventsPresenterStub.swift; sourceTree = "<group>"; };
+		3DF6D6562717D2ED00AE0229 /* CalendarPresenterStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPresenterStub.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,8 +158,13 @@
 		3DF6D5CC2714F53700AE0229 /* UpcomingEventsTests */ = {
 			isa = PBXGroup;
 			children = (
+				3DF6D64F2717CFC200AE0229 /* View */,
+				3DF6D64A2717CC4400AE0229 /* Presenter */,
+				3DF6D6432717C66F00AE0229 /* UseCases */,
+				3DF6D6402717C3D400AE0229 /* Data */,
 				3DF6D5CD2714F53700AE0229 /* UpcomingEventsTests.swift */,
 				3DF6D5CF2714F53700AE0229 /* Info.plist */,
+				3DF6D6462717C74900AE0229 /* XCTestCase+MemoryLeakTracking.swift */,
 			);
 			path = UpcomingEventsTests;
 			sourceTree = "<group>";
@@ -167,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				3DF6D5EF2714FA8300AE0229 /* CalendarEventsViewDelegate.swift */,
+				3DF6D64D2717CD0C00AE0229 /* CalendarEventsDependencies.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -231,6 +255,41 @@
 				3DF6D634271761D900AE0229 /* DetailEventViewController.swift */,
 			);
 			path = DetailEvent;
+			sourceTree = "<group>";
+		};
+		3DF6D6402717C3D400AE0229 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				3DF6D6412717C3F400AE0229 /* EventsServiceAPITest.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		3DF6D6432717C66F00AE0229 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				3DF6D6442717C68F00AE0229 /* GetEventUseCaseTests.swift */,
+				3DF6D6482717CA8E00AE0229 /* GetConflictEventUseCaseTests.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		3DF6D64A2717CC4400AE0229 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				3DF6D64B2717CC6000AE0229 /* CalendarEventsPresenterTests.swift */,
+				3DF6D6542717D01400AE0229 /* CalendarEventsPresenterStub.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		3DF6D64F2717CFC200AE0229 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3DF6D6502717CFCE00AE0229 /* CalendarViewControllerTests.swift */,
+				3DF6D6562717D2ED00AE0229 /* CalendarPresenterStub.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -376,6 +435,7 @@
 				3DF6D5F82715294200AE0229 /* EventViewData.swift in Sources */,
 				3DF6D5B72714F53300AE0229 /* AppDelegate.swift in Sources */,
 				3DF6D6312717439400AE0229 /* EventTableViewCell.swift in Sources */,
+				3DF6D64E2717CD0C00AE0229 /* CalendarEventsDependencies.swift in Sources */,
 				3DF6D5B92714F53300AE0229 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,6 +445,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DF6D5CE2714F53700AE0229 /* UpcomingEventsTests.swift in Sources */,
+				3DF6D64C2717CC6000AE0229 /* CalendarEventsPresenterTests.swift in Sources */,
+				3DF6D6472717C74900AE0229 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
+				3DF6D6552717D01400AE0229 /* CalendarEventsPresenterStub.swift in Sources */,
+				3DF6D6492717CA8E00AE0229 /* GetConflictEventUseCaseTests.swift in Sources */,
+				3DF6D6572717D2ED00AE0229 /* CalendarPresenterStub.swift in Sources */,
+				3DF6D6512717CFCE00AE0229 /* CalendarViewControllerTests.swift in Sources */,
+				3DF6D6452717C68F00AE0229 /* GetEventUseCaseTests.swift in Sources */,
+				3DF6D6422717C3F500AE0229 /* EventsServiceAPITest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

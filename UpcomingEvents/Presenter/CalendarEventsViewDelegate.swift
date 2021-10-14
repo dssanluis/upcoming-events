@@ -18,17 +18,14 @@ protocol CalendarEventsPresenter {
 
 class CalendarEventsPresenterImp: CalendarEventsPresenter {
     
-    private let getEventsUseCase: GetEventUseCase
-    private let getConflictEventUseCase: GetConflictEventUseCase
+    let dependencies: CalendarEventsDependencies
     
     private var datesTitle: [Date] = []
     
     weak private var calendarEventsViewDelegate : CalendarEventsViewDelegate?
     
-    init(getEventsUseCase: GetEventUseCase,
-         getConflictEventUseCase: GetConflictEventUseCase){
-        self.getEventsUseCase = getEventsUseCase
-        self.getConflictEventUseCase = getConflictEventUseCase
+    init(dependencies: CalendarEventsDependencies){
+        self.dependencies = dependencies
     }
     
     func setViewDelegate(calendarEventsViewDelegate: CalendarEventsViewDelegate?) {
@@ -36,7 +33,7 @@ class CalendarEventsPresenterImp: CalendarEventsPresenter {
     }
     
     func getEvents() {
-        let events = getEventsUseCase.invoke()
+        let events = dependencies.getEventsUseCase.invoke()
         var dates = Set<Date>()
         var sections: [[EventViewData]] = []
         
@@ -52,7 +49,7 @@ class CalendarEventsPresenterImp: CalendarEventsPresenter {
                 .filter { $0.startDate == date }
                 .sorted(by: { $0.hour < $1.hour })
             
-            let viewDatas = getConflictEventUseCase
+            let viewDatas = dependencies.getConflictEventUseCase
                 .invoke(events: eventWithoutConflict)
                 .map { EventViewData(event: $0) }
 

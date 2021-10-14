@@ -21,6 +21,8 @@ DerivedData/
 !default.mode2v3
 *.perspectivev3
 !default.perspectivev3
+*.xcuserdata
+*.xcbkptlist
 
 ## Obj-C/Swift specific
 *.hmap
@@ -29,6 +31,13 @@ DerivedData/
 *.ipa
 *.dSYM.zip
 *.dSYM
+
+## OSX
+.DS_Store
+.AppleDouble
+.LSOverride
+appium/.idea/
+appium/target/
 
 ## Playgrounds
 timeline.xctimeline

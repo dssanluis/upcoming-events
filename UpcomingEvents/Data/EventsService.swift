@@ -13,7 +13,11 @@ protocol EventsServiceAPI {
 
 final class EventsServiceAPIImp: EventsServiceAPI {
     
-    private let fileName = "mock"
+    private let fileName: String
+    
+    init(fileName: String = "mock") {
+        self.fileName = fileName
+    }
     
     func getEventsFromJSON() -> [Event] {
         let decoder = JSONDecoder()
